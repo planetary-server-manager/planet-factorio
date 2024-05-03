@@ -1,5 +1,4 @@
 #!/bin/bash
-neofetch
 echo "Starting..."
 cat logo.txt
 echo "Downloading latest server binary..."
