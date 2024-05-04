@@ -12,9 +12,15 @@ EXPOSE 34197
 RUN apt-get update
 RUN apt-get install software-properties-common apt-transport-https curl -y
 
-COPY runtime.sh runtime.sh
+# Download / Install latest dedicated server binary
+RUN mkdir /server
+RUN curl -L --max-redirs 1 "https://factorio.com/get-download/stable/headless/linux64" -o /server/factorio-dedicated-server.tar.xz && \
+    tar -xf /server/factorio-dedicated-server.tar.xz -C /server && \
+    rm /server/factorio-dedicated-server.tar.xz
+
+COPY server.sh server.sh
 COPY logo.txt logo.txt
 
-RUN chmod +x runtime.sh
+RUN chmod +x server.sh
 
-CMD ["/bin/bash", "runtime.sh"]
+CMD ["/bin/bash", "server.sh"]
