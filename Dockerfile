@@ -7,7 +7,7 @@ ENV TIMEZONE=America/Los_Angeles \
     PGID=0 \
     MAP_NAME=new-map
 
-EXPOSE 34197
+EXPOSE 34197/udp
 
 RUN apt-get update
 RUN apt-get install software-properties-common apt-transport-https curl -y
