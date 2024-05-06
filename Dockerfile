@@ -6,7 +6,14 @@ ENV TIMEZONE=America/Los_Angeles \
     PUID=0 \
     PGID=0 \
     MAP_NAME=new-map \
-    SERVER_NAME="Jellie Frontier Server"
+    SERVER_NAME="Jellie Frontier Server" \
+    DESCRIPTION="This is a containerized Factorio server deployed from the Jellie Frontier." \
+    PUBLIC=true \
+    STEAM=true \
+    LAN=true \
+    MAX_PLAYERS=0 \
+    PASSWORD= \
+    WHITELIST=false
 
 EXPOSE 34197/udp
 
