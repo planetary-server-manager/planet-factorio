@@ -29,8 +29,9 @@ RUN curl -L --max-redirs 1 "https://factorio.com/get-download/stable/headless/li
     tar -xf /server/factorio-dedicated-server.tar.xz -C /server && \
     rm /server/factorio-dedicated-server.tar.xz
 
-# Change config file path
+# Organize config files
 RUN sed -i 's/__PATH__executable__\/..\/..\/config/\/config/g' /server/factorio/config-path.cfg
+RUN cp /server/factorio/data/server-settings.example.json /config/server-settings.json
 
 COPY server.sh server.sh
 COPY configure-server.sh configure-server.sh
