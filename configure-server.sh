@@ -10,11 +10,15 @@ sed -i "s/; max-players=0/max-players=$MAX_PLAYERS/g" /config/config.ini
 sed -i "s/; password=/password=$PASSWORD/g" /config/config.ini
 sed -i "s/; enable-whitelist=false/enable-whitelist=$WHITELIST/g" /config/config.ini
 # Configure server-settings.json
+cp /server/factorio/data/server-settings.example.json /config/server-settings.json
 sed -i "s/\"name\": \"Name of the game as it will appear in the game listing\"/\"name\": \"$SERVER_NAME\"/g" /config/server-settings.json
 sed -i "s/\"description\": \"Description of the game that will appear in the listing\"/\"description\": \"$DESCRIPTION\"/g" /config/server-settings.json
 sed -i "s/\"max_players\": 0/\"max_players\": $MAX_PLAYERS/g" /config/server-settings.json
 sed -i "s/\"public\": true/\"public\": $PUBLIC/g" /config/server-settings.json
 sed -i "s/\"lan\": true/\"lan\": $LAN/g" /config/server-settings.json
 sed -i "s/\"game_password\": \"\"/\"game_password\": \"$PASSWORD\"/g" /config/server-settings.json
+sed -i "s/\"username\": \"\"/\"username\": \"$FACTORIO_USERNAME\"/g" /config/server-settings.json
+sed -i "s/\"password\": \"\"/\"password\": \"$FACTORIO_PASSWORD\"/g" /config/server-settings.json
+sed -i "s/\"token\": \"\"/\"token\": \"$FACTORIO_TOKEN\"/g" /config/server-settings.json
 # Run server
 ./bin/x64/factorio --start-server /saves/$MAP_NAME.zip --config /config/config.ini --server-settings /config/server-settings.json

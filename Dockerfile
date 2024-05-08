@@ -12,8 +12,11 @@ ENV TIMEZONE=America/Los_Angeles \
     STEAM=true \
     LAN=true \
     MAX_PLAYERS=0 \
-    PASSWORD= \
-    WHITELIST=false
+    PASSWORD=\
+    WHITELIST=false \
+    FACTORIO_USERNAME=\
+    FACTORIO_PASSWORD=\
+    FACTORIO_TOKEN=
 
 EXPOSE 34197/udp
 
@@ -31,7 +34,6 @@ RUN curl -L --max-redirs 1 "https://factorio.com/get-download/stable/headless/li
 
 # Organize config files
 RUN sed -i 's/__PATH__executable__\/..\/..\/config/\/config/g' /server/factorio/config-path.cfg
-RUN cp /server/factorio/data/server-settings.example.json /config/server-settings.json
 
 COPY server.sh server.sh
 COPY configure-server.sh configure-server.sh

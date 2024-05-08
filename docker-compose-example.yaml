@@ -1,0 +1,23 @@
+services:
+    factorio-server:
+        image: jelliefrontier/factorio-dedicated-server:latest
+        container_name: factorio-server
+        environment:
+            - MAP_NAME=JellieMap
+            - SERVER_NAME="Jellie Frontier Server"
+            - DESCRIPTION="This is a containerized Factorio server deployed from the Jellie Frontier."
+            - PUBLIC=true
+            - STEAM=true
+            - LAN=true
+            - MAX_PLAYERS=0
+            - PASSWORD=cleverpassword
+            - WHITELIST=false
+            - FACTORIO_USERNAME=
+            - FACTORIO_PASSWORD=
+            - FACTORIO_TOKEN=
+        ports:
+            - 34197:34197/udp
+        volumes:
+            - {CONFIG DIRECTORY}:/config
+            - {SAVE DIRECTORY}:/saves
+        restart: unless-stopped
