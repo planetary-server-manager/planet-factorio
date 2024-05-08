@@ -7,7 +7,7 @@ Containerized Factorio server for easy portability, deployment, and configuratio
 This is an all-in one container for running a Factorio server. Each version tag corresponds to the Factorio server version that comes bundled in.
 
 ## Map Generation
-The container will scan for existing map files in the **/saves** volume (see [volumes](#volumes)) on startup. If no map (matching **MAP_NAME**) exists, it will generate a new one based on the **map-gen-settings.json** file. 
+The container will scan for existing map files in the **/saves** volume (see [volumes](#volumes)) on startup. If no map matching **MAP_NAME**.zip exists, it will generate a new one based on the **map-gen-settings.json** file. 
 
 > **Note**: The **map-gen-settings.json** file will be generated in the **/config** volume based on your [environment variables](#environment-variables) and default values. If you have manually edited the **map-gen-settings.json** file, those settings will **not** be overridden by environment variables.
 
