@@ -36,10 +36,10 @@ RUN curl -L --max-redirs 1 "https://factorio.com/get-download/stable/headless/li
 RUN sed -i 's/__PATH__executable__\/..\/..\/config/\/config/g' /server/factorio/config-path.cfg
 
 COPY server.sh server.sh
-COPY configure-server.sh configure-server.sh
+COPY generate-map.sh generate-map.sh
 COPY logo.txt logo.txt
 
 RUN chmod +x server.sh
-RUN chmod +x configure-server.sh
+RUN chmod +x generate-map.sh
 
 CMD ["/bin/bash", "server.sh"]
