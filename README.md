@@ -1,8 +1,6 @@
 # Factorio Dedicated Server
 Containerized Factorio server for easy portability, deployment, and configuration.
 
-> **Note**: This image is currently in development. While functional, there are still many rough edges and missing features.
-
 # Summary
 This is an all-in one container for running a Factorio server. Each version tag corresponds to the Factorio server version that comes bundled in.
 
