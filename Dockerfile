@@ -1,4 +1,6 @@
-FROM ubuntu:latest
+FROM --platform=$BUILDPLATFORM ubuntu:latest AS build
+ARG TARGETOS
+ARG TARGETARCH
 
 LABEL maintainer="thekraken8him"
 

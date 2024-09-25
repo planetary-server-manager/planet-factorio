@@ -1,5 +1,5 @@
 #!/bin/bash
-echo "Starting..."
+echo "Welcome to the"
 cat logo.txt
 cd /server/factorio
 # Configure server-settings.json
