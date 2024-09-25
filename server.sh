@@ -1,6 +1,4 @@
 #!/bin/bash
-echo "Welcome to the"
-cat logo.txt
 cd /server/factorio
 # Configure server-settings.json
 if [ "$(ls /config/server-settings.json)" != "/config/server-settings.json" ]; then

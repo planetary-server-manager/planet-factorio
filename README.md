@@ -1,8 +1,11 @@
 # Factorio Dedicated Server
-Containerized Factorio server for easy portability, deployment, and configuration.
+Containerized cross-platform Factorio server for easy portability, deployment, and configuration.
 
 # Summary
-This is an all-in one container for running a Factorio server. Each version tag corresponds to the Factorio server version that comes bundled in.
+This is an all-in one container for running a Factorio server. It contains several features, including:
+
+## Automatic Updates
+The containter will automatically download the latest server version from [factorio.com](https://www.factorio.com/download) each time it (re)starts.
 
 ## Map Generation
 The container will scan for existing map files in the **/saves** volume (see [volumes](#volumes)) on startup. If no map matching **MAP_NAME**.zip exists, it will generate a new one based on the **map-gen-settings.json** file. 

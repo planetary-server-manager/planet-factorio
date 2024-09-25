@@ -31,19 +31,21 @@ RUN mkdir /server
 RUN mkdir /saves
 RUN mkdir /config
 
-# Download / Install latest dedicated server binary
-RUN curl -L --max-redirs 1 "https://factorio.com/get-download/stable/headless/linux64" -o /server/factorio-dedicated-server.tar.xz && \
-    tar -xf /server/factorio-dedicated-server.tar.xz -C /server && \
-    rm /server/factorio-dedicated-server.tar.xz
+# # Download / Install latest dedicated server binary
+# RUN curl -L --max-redirs 1 "https://factorio.com/get-download/stable/headless/linux64" -o /server/factorio-dedicated-server.tar.xz && \
+#     tar -xf /server/factorio-dedicated-server.tar.xz -C /server && \
+#     rm /server/factorio-dedicated-server.tar.xz
 
-# Organize config files
-RUN sed -i 's/__PATH__executable__\/..\/..\/config/\/config/g' /server/factorio/config-path.cfg
+# # Organize config files
+# RUN sed -i 's/__PATH__executable__\/..\/..\/config/\/config/g' /server/factorio/config-path.cfg
 
+COPY bootstrap.sh bootstrap.sh
 COPY server.sh server.sh
 COPY generate-map.sh generate-map.sh
 COPY logo.txt logo.txt
 
+RUN chmod +x bootstrap.sh
 RUN chmod +x server.sh
 RUN chmod +x generate-map.sh
 
-CMD ["/bin/bash", "server.sh"]
+CMD ["/bin/bash", "bootstrap.sh"]
