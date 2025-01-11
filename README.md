@@ -1,5 +1,5 @@
 # Factorio Dedicated Server
-PSM container image for Minecraft Java. It provides tight integration with the PSM API.
+PSM container image for Minecraft Java. It provides tight integration with the [PSM API](https://github.com/planetary-server-manager/api-server).
 
 # Auto Updates
 Automatic updates are turned **on** by default. This will ensure the container always downloads the latest server version every time it starts. If you would like to stay on your current version and disable auto updates, set **AUTO_UPDATE** to **false**.

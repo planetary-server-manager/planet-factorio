@@ -16,4 +16,4 @@ sed -i "s/\"token\": \"\"/\"token\": \"$FACTORIO_TOKEN\"/g" /config/server-setti
 # Run server
 ls /saves/$MAP_NAME.zip && \
 ./bin/x64/factorio --start-server /saves/$MAP_NAME.zip --config /config/config.ini --server-settings /config/server-settings.json || \
-./../../generate-map.sh
+./../../scripts/generate-map.sh

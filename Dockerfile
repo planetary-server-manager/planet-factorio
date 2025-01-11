@@ -27,6 +27,11 @@ RUN mkdir /config
 COPY /scripts /scripts
 
 RUN chmod -R 770 /scripts && \
+    chmod -R 770 /saves && \
+    chmod -R 770 /config
+    
+RUN chown -R factorio /scripts && \
+    chown -R factorio /saves && \
     chown -R factorio /scripts
 
 CMD ["/bin/bash", "/scripts/bootstrap.sh"]

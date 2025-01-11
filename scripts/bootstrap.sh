@@ -1,5 +1,6 @@
 # Intro
-cat logo.txt && \
+cat logo.txt
+cd /scripts
 if $AUTO_UPDATE ; then
     ./update.sh
 else
