@@ -21,7 +21,7 @@ This container stores the **server-settings.json** file in the **/config** volum
 ## Server Configuration
 | Name | Default Value | Description |
 | --- | --- | --- |
-| SERVER_NAME | Jellie Frontier Server | Name of the server as it appears in the server list |
+| SERVER_NAME | Planetary Factorio Server | Name of the server as it appears in the server list |
 | PASSWORD |  | Password required to join the server. Leave empty for no password requirement. |
 | MAX_PLAYERS | 0 | Sets the maximum concurrent players for the server. A value of **0** means no limit. |
 | PUBLIC | true | The server will be listed on the public games list. Change to **false** to hide the server from public lists. You must also set valid **FACTORIO_USERNAME** and **FACTORIO_PASSWORD** (or **FACTORIO_TOKEN**) for this to work. |
@@ -51,12 +51,12 @@ Docker Compose is recommended for easily repeatable deployments. Here is an exam
 ```
 services:
     factorio-server:
-        image: jelliefrontier/factorio-dedicated-server:latest
+        image: ghcr.io/planetary-server-manager/planet-factorio:latest
         container_name: factorio-server
         environment:
-            - MAP_NAME=JellieMap
-            - SERVER_NAME="Jellie Frontier Server"
-            - DESCRIPTION="This is a containerized Factorio server deployed from the Jellie Frontier."
+            - MAP_NAME=new-map
+            - SERVER_NAME="Planetary Factorio Server"
+            - DESCRIPTION="This is a containerized Factorio server deployed using the Planetary Server Manager."
             - PUBLIC=true
             - LAN=true
             - MAX_PLAYERS=0
