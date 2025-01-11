@@ -1,11 +1,10 @@
 # Factorio Dedicated Server
-Containerized cross-platform Factorio server for easy portability, deployment, and configuration.
+PSM container image for Minecraft Java. It provides tight integration with the PSM API.
 
-# Summary
-This is an all-in one container for running a Factorio server. It contains several features, including:
+# Auto Updates
+Automatic updates are turned **on** by default. This will ensure the container always downloads the latest server version every time it starts. If you would like to stay on your current version and disable auto updates, set **AUTO_UPDATE** to **false**.
 
-## Automatic Updates
-The containter will automatically download the latest server version from [factorio.com](https://www.factorio.com/download) each time it (re)starts.
+> **Note**: **AUTO_UPDATE** must be set to **true** for the first run of the container, otherwise no server will be downloaded.
 
 ## Map Generation
 The container will scan for existing map files in the **/saves** volume (see [volumes](#volumes)) on startup. If no map matching **MAP_NAME**.zip exists, it will generate a new one based on the **map-gen-settings.json** file. 

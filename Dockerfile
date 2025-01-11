@@ -1,19 +1,15 @@
-FROM --platform=$BUILDPLATFORM ubuntu:latest AS build
+FROM --platform=$BUILDPLATFORM ghcr.io/planetary-server-manager/planetary-base:latest AS build
 ARG TARGETOS
 ARG TARGETARCH
 
-LABEL maintainer="thekraken8him"
+LABEL maintainer="renegadespork"
 
-ENV TIMEZONE=America/Los_Angeles \
-    PUID=0 \
-    PGID=0 \
-    MAP_NAME=new-map \
+ENV MAP_NAME=new-map \
     SERVER_NAME="Planetary Factorio Server" \
     DESCRIPTION="This is a containerized Factorio server deployed using the Planetary Server Manager." \
     PUBLIC=true \
     STEAM=true \
     LAN=true \
-    MAX_PLAYERS=0 \
     PASSWORD=\
     WHITELIST=false \
     FACTORIO_USERNAME= \
@@ -24,28 +20,13 @@ ENV TIMEZONE=America/Los_Angeles \
 
 EXPOSE 34197/udp
 
-RUN apt-get update
-RUN apt-get install software-properties-common apt-transport-https curl -y
-
-RUN mkdir /server
+RUN usermod -l factorio ubuntu
 RUN mkdir /saves
 RUN mkdir /config
 
-# # Download / Install latest dedicated server binary
-# RUN curl -L --max-redirs 1 "https://factorio.com/get-download/stable/headless/linux64" -o /server/factorio-dedicated-server.tar.xz && \
-#     tar -xf /server/factorio-dedicated-server.tar.xz -C /server && \
-#     rm /server/factorio-dedicated-server.tar.xz
+COPY /scripts /scripts
 
-# # Organize config files
-# RUN sed -i 's/__PATH__executable__\/..\/..\/config/\/config/g' /server/factorio/config-path.cfg
+RUN chmod -R 770 /scripts && \
+    chown -R factorio /scripts
 
-COPY bootstrap.sh bootstrap.sh
-COPY server.sh server.sh
-COPY generate-map.sh generate-map.sh
-COPY logo.txt logo.txt
-
-RUN chmod +x bootstrap.sh
-RUN chmod +x server.sh
-RUN chmod +x generate-map.sh
-
-CMD ["/bin/bash", "bootstrap.sh"]
+CMD ["/bin/bash", "/scripts/bootstrap.sh"]
