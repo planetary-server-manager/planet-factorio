@@ -24,7 +24,7 @@ This container stores the **server-settings.json** file in the **/config** volum
 | PASSWORD |  | Password required to join the server. Leave empty for no password requirement. |
 | MAX_PLAYERS | 0 | Sets the maximum concurrent players for the server. A value of **0** means no limit. |
 | PUBLIC | true | The server will be listed on the public games list. Change to **false** to hide the server from public lists. You must also set valid **FACTORIO_USERNAME** and **FACTORIO_PASSWORD** (or **FACTORIO_TOKEN**) for this to work. |
-| LAN | true | The server will be listed on your local network. Chance to **false** to hide from LAN. Clients can still connect via direct IP address. | 
+| LAN | true | The server will be listed on your local network. Chance to **false** to hide from LAN. Clients can still connect via direct IP address. **Note**: You will need to add `network_mode: host` to your docker compose for you server to show up on LAN. | 
 | FACTORIO_USERNAME |  | Your factorio.com username. This is required for public game visibility. |
 | FACTORIO_PASSWORD |  | Your factorio.com password. This is required for public game visibility. |
 | FACTORIO_TOKEN |  | Authentication token from factorio.com. This can be used instead of **FACTORIO_PASSWORD** |
