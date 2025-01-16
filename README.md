@@ -1,4 +1,4 @@
-# Factorio Dedicated Server
+# 🪐 Planetary Factorio Server
 PSM container image for Factorio. It provides tight integration with the [PSM API](https://github.com/planetary-server-manager/api-server).
 
 # Auto Updates

@@ -34,4 +34,6 @@ RUN chown -R factorio /scripts && \
     chown -R factorio /saves && \
     chown -R factorio /scripts
 
+USER factorio
+
 CMD ["/bin/bash", "/scripts/bootstrap.sh"]
