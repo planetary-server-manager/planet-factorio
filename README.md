@@ -12,7 +12,7 @@ The container will scan for existing map files in the **/saves** volume (see [vo
 > **Note**: The **map-gen-settings.json** file will be generated in the **/config** volume based on your [environment variables](#environment-variables) and default values. If you have manually edited the **map-gen-settings.json** file, those settings will **not** be overridden by environment variables.
 
 ## Server Settings
-This container stores the **server-settings.json** file in the **/config** volume. Default settings will be overridden by your [environment variables](#environment-variables) with each run of the container. If you have manually edited the **server-settings.json** file, those settings will **not** be overridden by environment variables.
+This container stores the **server-settings.json** file in the **/config** volume. Settings will be overwritten by your [environment variables](#environment-variables) with each run of the container.
 
 # Environment Variables:
 > **Note**: Any environment variables not specified will revert to the listed default value.

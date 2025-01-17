@@ -1,4 +1,5 @@
 # Create new map
+cd /server/factorio
 if [ "$(ls /config/map-gen-settings.json)" != "/config/map-gen-settings.json" ]; then
     cp /server/factorio/data/map-gen-settings.example.json /config/map-gen-settings.json
 fi

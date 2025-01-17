@@ -6,5 +6,9 @@ if $AUTO_UPDATE ; then
 else
     echo "Auto-updates disabled. Skipping."
 fi
-# Run server
-./server.sh
+# Run config
+./config.sh && \
+# Run server if map exists, else generate map.
+ls /saves/$MAP_NAME.zip && \
+./server.sh || \
+./generate-map.sh

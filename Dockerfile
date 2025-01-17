@@ -28,11 +28,13 @@ COPY /scripts /scripts
 
 RUN chmod -R 770 /scripts && \
     chmod -R 770 /saves && \
-    chmod -R 770 /config
+    chmod -R 770 /config && \
+    chmod -R 770 /server
     
 RUN chown -R factorio /scripts && \
     chown -R factorio /saves && \
-    chown -R factorio /scripts
+    chown -R factorio /config && \
+    chown -R factorio /server
 
 USER factorio
 
