@@ -16,7 +16,8 @@ ENV MAP_NAME=new-map \
     FACTORIO_PASSWORD= \
     FACTORIO_TOKEN= \
     PEACEFUL=false \
-    SEED=null
+    SEED=null \
+    TAGS="planetary,container"
 
 EXPOSE 34197/udp
 

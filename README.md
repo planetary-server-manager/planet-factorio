@@ -29,6 +29,7 @@ This container stores the **server-settings.json** file in the **/config** volum
 | FACTORIO_PASSWORD |  | Your factorio.com password. This is required for public game visibility. |
 | FACTORIO_TOKEN |  | Authentication token from factorio.com. This can be used instead of **FACTORIO_PASSWORD** |
 | WHITELIST | false | When set to **false**, any player can join the server. When set to **true**, only players listed in the whitelist will be able join. | 
+| TAGS | "planetary, container" | List of comma-separated tags that will show up in the server browser. |
 
 ## Map Generation
 | Name | Default Value | Description |
